@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+        double[] results = new double[10];
         Scanner sc = new Scanner(System.in);
-
+        int count = 0;
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
@@ -37,6 +38,9 @@ public class App {
                     }
             }
             System.out.println("결과: " + result);
+
+            results[count] = result;
+            count++;
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String checkExit = sc.next();
