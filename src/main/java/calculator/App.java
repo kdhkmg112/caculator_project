@@ -14,5 +14,28 @@ public class App {
 
         System.out.print("사칙연산 기호를 입력하세요: ");
         char operator = sc.next().charAt(0);
+
+        double result = 0;
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 == 0) {
+                    System.out.println("분모가 0이므로 계산이 불가능합니다.");
+                    break;
+                } else {
+                    result = (double) num1 / num2;
+                    break;
+                }
+        }
+        System.out.println("결과: " + result);
+
     }
 }
