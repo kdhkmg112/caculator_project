@@ -1,13 +1,16 @@
 package calculator;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        double[] results = new double[10];
+        Queue<Double> results = new ArrayDeque<Double>();
         Scanner sc = new Scanner(System.in);
         int count = 0;
+
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
@@ -39,8 +42,15 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            results[count] = result;
-            count++;
+
+            if (count>10) {
+                results.poll();
+                results.offer(result);
+                count++;
+            } else {
+                results.offer(result);
+                count++;
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String checkExit = sc.next();
