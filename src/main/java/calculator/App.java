@@ -48,6 +48,15 @@ public class App {
                 doubleList.remove(0);
             }
 
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String str_inquiry = sc.next();
+            if (str_inquiry.equals("inquiry")) {
+                for (double num : doubleList) {
+                    System.out.print(num+" ");
+                }
+                System.out.println();
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String checkExit = sc.next();
             if (checkExit.equals("exit")) {
