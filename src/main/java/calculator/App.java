@@ -1,13 +1,12 @@
 package calculator;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        Queue<Double> results = new ArrayDeque<Double>();
+        ArrayList<Double> doubleList = new ArrayList<Double>();
         Scanner sc = new Scanner(System.in);
         int count = 0;
 
@@ -41,15 +40,12 @@ public class App {
                     }
             }
             System.out.println("결과: " + result);
+            doubleList.add(result);
 
-
-            if (count>10) {
-                results.poll();
-                results.offer(result);
-                count++;
-            } else {
-                results.offer(result);
-                count++;
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String str_remove = sc.next();
+            if (str_remove.equals("remove")) {
+                doubleList.remove(0);
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
