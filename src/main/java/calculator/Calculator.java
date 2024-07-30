@@ -36,4 +36,13 @@ public class Calculator {
         }
         return;
     }
+
+    public static void inquiryResult (String str_inquiry) {
+        if (str_inquiry.equals("inquiry")) {
+            for (double num : doubleList) {
+                System.out.print(num+" ");
+            }
+            System.out.println();
+        }
+    }
 }
