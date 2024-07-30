@@ -3,9 +3,11 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
+    private ArrayList<Double> areaList; //조건에 생성자로 초기화 -> static 사용불가
     private ArrayList<Double> doubleList;
     Calculator() {
          doubleList = new ArrayList<>();
+         areaList = new ArrayList<>();
     }
 
     public double calculate(int num1, int num2, char operator) {
@@ -33,7 +35,7 @@ public class Calculator {
         return result;
     }
 
-    public void removeResult (double result,String str_remove) {
+    public void removeResult (String str_remove) {
         if (str_remove.equals("remove")) {
             doubleList.remove(0);
         }
@@ -48,4 +50,29 @@ public class Calculator {
             System.out.println();
         }
     }
+
+    public double calculateArea (double r) {
+        final double pi = 3.14; //파이는 상수값 -> final
+        double area = 3.14*r*r;
+        areaList.add(area);
+        return area;
+    }
+
+    public void removeArea (String str_remove) {
+        if (str_remove.equals("remove")) {
+            areaList.remove(0);
+        }
+        return;
+    }
+
+    public void inquiryArea (String str_inquiry) {
+        if (str_inquiry.equals("inquiry")) {
+            for (double num : areaList) {
+                System.out.print(num+" ");
+            }
+            System.out.println();
+        }
+    }
+
+
 }
