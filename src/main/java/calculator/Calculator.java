@@ -26,6 +26,7 @@ public class Calculator {
                     break;
                 }
         }
+        doubleList.add(result);
         return result;
     }
 }
