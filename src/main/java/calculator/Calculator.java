@@ -3,9 +3,12 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    static private ArrayList<Double> doubleList = new ArrayList<>();
+    private ArrayList<Double> doubleList;
+    Calculator() {
+         doubleList = new ArrayList<>();
+    }
 
-    public static double calculate(int num1, int num2, char operator) {
+    public double calculate(int num1, int num2, char operator) {
         double result = 0;
         switch (operator) {
             case '+':
@@ -30,14 +33,14 @@ public class Calculator {
         return result;
     }
 
-    public static void removeResult (double result,String str_remove) {
+    public void removeResult (double result,String str_remove) {
         if (str_remove.equals("remove")) {
             doubleList.remove(0);
         }
         return;
     }
 
-    public static void inquiryResult (String str_inquiry) {
+    public void inquiryResult (String str_inquiry) {
         if (str_inquiry.equals("inquiry")) {
             for (double num : doubleList) {
                 System.out.print(num+" ");
