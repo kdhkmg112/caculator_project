@@ -26,9 +26,7 @@ public class App {
 
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String str_remove = sc.next();
-            if (str_remove.equals("remove")) {
-                doubleList.remove(0);
-            }
+            Calculator.removeResult(result,str_remove);
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String str_inquiry = sc.next();

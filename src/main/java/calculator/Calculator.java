@@ -29,4 +29,11 @@ public class Calculator {
         doubleList.add(result);
         return result;
     }
+
+    public static void removeResult (double result,String str_remove) {
+        if (str_remove.equals("remove")) {
+            doubleList.remove(0);
+        }
+        return;
+    }
 }
